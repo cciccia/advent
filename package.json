@@ -1,0 +1,10 @@
+{
+  "name": "advent-day-1",
+  "version": "1.0.0",
+  "description": "Advent Day 1",
+  "main": "index.js",
+  "repository": "git@github:cciccia/advent-day-1.git",
+  "author": "Charlie Ciccia <cciccia@gmail.com>",
+  "license": "MIT",
+  "dependencies": {}
+}
