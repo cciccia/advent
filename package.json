@@ -6,5 +6,7 @@
   "repository": "git@github:cciccia/advent-day-1.git",
   "author": "Charlie Ciccia <cciccia@gmail.com>",
   "license": "MIT",
-  "dependencies": {}
+  "dependencies": {
+    "bluebird": "^3.5.1"
+  }
 }
