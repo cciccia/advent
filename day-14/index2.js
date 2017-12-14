@@ -102,27 +102,12 @@ function getRegions(input) {
         return [...Array(128).keys()].reduce((p, j) => {
             const me = `${j}:${i}`;
             if (grid.get(me)) {
-                p.set(me, [me]);
                 const up = `${j}:${i-1}`;
                 const down = `${j}:${i+1}`;
                 const left = `${j-1}:${i}`;
                 const right = `${j+1}:${i}`;
 
-                if (grid.get(up)) {
-                    p.set(me, p.get(me).concat([up]));
-                }
-
-                if (grid.get(down)) {
-                    p.set(me, p.get(me).concat([down]));
-                }
-                
-                if (grid.get(left)) {
-                    p.set(me, p.get(me).concat([left]));
-                }
-                
-                if (grid.get(right)) {
-                    p.set(me, p.get(me).concat([right]));
-                }
+                p.set(me, [me, up, down, left, right].filter(item => grid.get(item)));
             }
             return p;
         }, prev);
