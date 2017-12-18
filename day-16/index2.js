@@ -31,8 +31,6 @@ function doALittleDance(state, moves) {
 }
 
 function getALotOfDances(moves, iterations) {
-    const cache = new Map();
-
     const resultArr = [];
     const resultSet = new Set();
 
