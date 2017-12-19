@@ -6,6 +6,17 @@ fs.readFileAsync(process.argv[2], "utf8")
         answerTheGoddamnProblemIGuess(data.split('\n'));
     });
 
+function answerTheGoddamnProblemIGuess(instructions) {
+    const abChan = chan();
+    const baChan = chan();
+
+    const zero = new Program(0, instructions, abChan, baChan);
+    const one = new Program(1, instructions, baChan, abChan);
+
+    zero.execute();
+    one.execute().then(val => console.log(val))
+}
+
 function chan() {
     const buffer = [];
     let ready;
@@ -30,17 +41,6 @@ function chan() {
             });
         }
     };
-}
-
-function answerTheGoddamnProblemIGuess(instructions) {
-    const abChan = chan();
-    const baChan = chan();
-
-    const zero = new Program(0, instructions, abChan, baChan);
-    const one = new Program(1, instructions, baChan, abChan);
-
-    zero.execute();
-    one.execute().then(val => console.log(val))
 }
 
 class Program {
