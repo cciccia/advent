@@ -17,6 +17,7 @@ function headOnApplyDirectlyToTheForehead(rulesList, iterations) {
         .reduce((prev, row) => prev + row.reduce((p, cell) => p + cell, 0), 0);
 }
 
+// representation functions
 function serialize(arr) {
     return arr.map(row => row.map(cell => cell ? '#' : '.').join('')).join('/');
 }
@@ -25,10 +26,28 @@ function deserialize(repr) {
     return repr.split('/').map(row => row.split('').map(cell => cell === '#' ? 1 : 0));
 }
 
+//mutation functions
 function flip(arr) {
     return arr.reverse();
 }
 
+function rotate(arr) {
+    const newArr = [];
+
+    for (let y = 0; y < arr.length; y++) {
+        newArr[y] = [];
+    }
+
+    for (let y = 0; y < arr.length; y++) {
+        for (let x = 0; x < arr.length; x++) {
+            newArr[x][arr.length - y - 1] = arr[y][x];
+        }
+    }
+    
+    return newArr;
+}
+
+//fractalization functions
 function split(arr, factor) {
     const slices = arr.length / factor;
     const splitArrs = [];
@@ -63,22 +82,7 @@ function join(arrs) {
     return joinArr;
 }
 
-function rotate(arr) {
-    const newArr = [];
-
-    for (let y = 0; y < arr.length; y++) {
-        newArr[y] = [];
-    }
-
-    for (let y = 0; y < arr.length; y++) {
-        for (let x = 0; x < arr.length; x++) {
-            newArr[x][arr.length - y - 1] = arr[y][x];
-        }
-    }
-    
-    return newArr;
-}
-
+//lifecycle functions
 function grow(rules, arr, factor) {
     const splitArrs = split(arr, factor);
 
