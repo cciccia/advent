@@ -8,7 +8,7 @@ fs.readFileAsync(process.argv[2], "utf8")
 
 function f(primes) {
     let answer = 0;
-    for (i = 105700; i < 122700; i += 17) {
+    for (i = 105700; i <= 122700; i += 17) {
     
         if (!primes.has(i)) {
             answer++;
