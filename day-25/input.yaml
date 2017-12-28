@@ -1,0 +1,59 @@
+A:
+  0:
+    - 1
+    - right
+    - B
+  1:
+    - 0
+    - right
+    - F
+
+B:
+  0:
+    - 0
+    - left
+    - B
+  1:
+    - 1
+    - left
+    - C
+
+C:
+  0:
+    - 1
+    - left
+    - D
+  1:
+    - 0
+    - right
+    - C
+
+D:
+  0:
+    - 1
+    - left
+    - E
+  1:
+    - 1
+    - right
+    - A
+
+E:
+  0:
+    - 1
+    - left
+    - F
+  1:
+    - 0
+    - left
+    - D
+
+F:
+  0:
+    - 1
+    - right
+    - A
+  1:
+    - 0
+    - left
+    - E

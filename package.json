@@ -7,6 +7,7 @@
   "author": "Charlie Ciccia <cciccia@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "bluebird": "^3.5.1"
+    "bluebird": "^3.5.1",
+    "node-yaml": "^3.1.1"
   }
 }
